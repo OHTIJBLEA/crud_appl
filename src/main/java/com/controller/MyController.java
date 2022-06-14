@@ -56,32 +56,3 @@ public class MyController {
         return "redirect:/";
     }
 }
-
-//    @Autowired
-//    private EmployeeService employeeService;
-//
-//    @RequestMapping(value = "/")
-//    public String showAllEmployees(Model model) {
-//        List<Employee> employeeList = employeeService.getAllEmployees();
-//        model.addAttribute("allEmps", employeeList);
-//        return "all-employees";
-//    }
-//
-//    @RequestMapping("/saveEmployee")
-//    public String saveEmployee(@ModelAttribute("employee") Employee employee) {
-//        employeeService.saveEmployee(employee);
-//        return "redirect:/";
-//    }
-//
-//    @RequestMapping("/updateInfo")
-//    public String updateEmployee(@RequestParam("empId") int id, Model model) {
-//        Employee employee = employeeService.getEmployee(id);
-//        model.addAttribute("employee", employee);
-//        return "employees-info";
-//    }
-//
-//    @RequestMapping("/deleteEmployee")
-//    public String deleteEmployee(@RequestParam("empId") int id) {
-//        employeeService.deleteEmployee(id);
-//        return "redirect:/";
-//    }
