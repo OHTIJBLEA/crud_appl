@@ -1,34 +1,47 @@
 <!DOCTYPE HTML>
-<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
-  <meta charset="UTF-8"/>
-  <title>All user</title>
+    <meta charset="UTF-8"/>
+    <title>All user</title>
 </head>
 <body>
 <h2>User</h2>
-<table>
-  <thead>
-  <tr>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Salary</th>
-    <th>Operations</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr th:each="emp : ${allUser}">
-    <td th:text="${emp.firstName}"></td>
-    <td th:text="${emp.lastName}"></td>
-    <td th:text="${emp.salary}"></td>
-    <td><a th:href="@{user-update/{id}(id=${emp.id})}">Update</a>
-      <a th:href="@{user-delete/{id}(id=${emp.id})}">Delete</a>
-    </td>
-  </tr>
-  </tbody>
-</table>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Salary</th>
+            <th>Operations</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${allUser}">
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.lastName}"></td>
+            <td th:text="${user.salary}"></td>
+            <td>
+                <a th:href="@{user-update/{id}(id=${user.getId})}">
+                    <input type="submit" value="Update"/>
+                </a>
+            </td>
+            <td>
+                <form th:method="DELETE" th:action="@{/delete/{id}(id=${user.getId()})}">
+                    <input type="submit" value="Delete"/>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-<p><a href="/user-save">Create user</a></p>
+
+<a th:href="@{/user-save}">
+    <input type="submit" value="Create user"/>
+</a>
+
+<!--<p><a href="/user-save">Create user</a></p>-->
 </div>
 </body>
 </html>

@@ -49,6 +49,7 @@ public class HibernateConfig {
 
         return dataSource;
     }
+
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();

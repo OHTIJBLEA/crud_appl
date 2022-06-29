@@ -3,22 +3,23 @@ package com.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "employees")
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column
     private Long id;
 
-    @Column(name = "firstName")
+    @Column
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column
     private String lastName;
-    @Column(name = "salary")
+    @Column
     private int salary;
 
-    public User() {}
+    public User() {
+    }
 
     public User(String firstName, String lastName, int salary) {
         this.firstName = firstName;

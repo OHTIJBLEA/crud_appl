@@ -20,7 +20,7 @@ public class MyController {
 
     @GetMapping("/")
     public String showAllUser(Model model) {
-        model.addAttribute("allUser",userService.getAllUser());
+        model.addAttribute("allUser", userService.getAllUser());
         return "all-users";
     }
 
@@ -35,7 +35,12 @@ public class MyController {
         return "redirect:/";
     }
 
-    @GetMapping("/user-delete/{id}")
+    //    @GetMapping("/user-delete/{id}")
+//    public String deleteUser(@PathVariable("id") Long id) {
+//        userService.deleteUser(id);
+//        return "redirect:/";
+//    }
+    @DeleteMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") Long id) {
         userService.deleteUser(id);
         return "redirect:/";
