@@ -25,7 +25,8 @@ public class MyController {
     }
 
     @GetMapping("/user-save")
-    public String saveUserForm() {
+    public String saveUserForm(Model model) {
+        model.addAttribute("user", new User());
         return "user-save";
     }
 
