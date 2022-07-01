@@ -25,7 +25,7 @@ public class MyController {
     }
 
     @GetMapping("/user-save")
-    public String saveUserForm(User user) {
+    public String saveUserForm() {
         return "user-save";
     }
 
@@ -35,11 +35,6 @@ public class MyController {
         return "redirect:/";
     }
 
-    //    @GetMapping("/user-delete/{id}")
-//    public String deleteUser(@PathVariable("id") Long id) {
-//        userService.deleteUser(id);
-//        return "redirect:/";
-//    }
     @DeleteMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") Long id) {
         userService.deleteUser(id);
