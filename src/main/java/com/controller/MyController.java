@@ -43,13 +43,13 @@ public class MyController {
     }
 
     @GetMapping("/user-update/{id}")
-    public String updateEmployeeForm(@PathVariable("id") Long id, Model model) {
+    public String updateUserForm(@PathVariable("id") Long id, Model model) {
         model.addAttribute("user", userService.getUser(id));
         return "user-update";
     }
 
     @PostMapping("/user-update")
-    public String updateEmployee(User user) {
+    public String updateUser(User user) {
         userService.updateUser(user);
         return "redirect:/";
     }
